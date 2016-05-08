@@ -1,0 +1,19 @@
+{
+  "name": "wac",
+  "description": "Weighted Average Calculator",
+  "main": "index.js",
+  "authors": [
+    "Jared Barnett <jmwbarnett@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
