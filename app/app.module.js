@@ -2,6 +2,7 @@
   'use strict';
 
   angular.module('app', [
-    'app.calculator'
+    'app.calculator',
+    'app.layout'
   ]);
 })();
