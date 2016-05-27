@@ -2,3 +2,7 @@ bower_components
 node_modules
 build
 .notes
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
