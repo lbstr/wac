@@ -18,7 +18,10 @@
     "express": "^4.13.4"
   },
   "scripts": {
-    "start": "node app",
-    "install": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "preinstall": "npm install -g gulp",
+    "prestart": "npm run gulp",
+    "start": "node app"
   }
 }
