@@ -13,9 +13,13 @@ router.get('/', function(req, res, next) {
 
 app.use('/', router);
 
-app.use(express.static(path.join(__dirname, 'build')));
+if (process.env.NODE_ENV !== "production") {
+  app.use(express.static(path.join(__dirname, 'build')));
 
-// TODO: remove this and use templatecache
-app.use(express.static(path.join(__dirname, 'app')));
+  // TODO: remove this and use templatecache
+  app.use(express.static(path.join(__dirname, 'app')));
+}
 
-app.listen(process.env.PORT || 8081);
+var port = process.env.PORT || 8081;
+console.log("Starting application on port " + port + "...");
+app.listen(port);
