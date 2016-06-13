@@ -4,20 +4,19 @@
   "description": "Weighted Average Calculator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "add-stream": "^1.0.0",
     "del": "^2.2.0",
+    "express": "^4.13.4",
     "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^1.8.0",
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.2",
-    "express": "^4.13.4"
-  },
-  "scripts": {
-    "start": "node app"
+    "pug": "^2.0.0-alpha8"
   }
 }

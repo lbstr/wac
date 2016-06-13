@@ -3,6 +3,7 @@
 
   angular.module('app', [
     'app.calculator',
-    'app.layout'
+    'app.layout',
+    'templates'
   ]);
 })();
