@@ -24,7 +24,7 @@ gulp.task('js', function() {
 
 gulp.task('vendor-js', function(){
   return gulp.src([
-      'bower_components/angular/angular*.js?(.map)'
+      'client/bower_components/angular/angular*.js?(.map)'
     ])
     .pipe(gulp.dest('public/js'));
 

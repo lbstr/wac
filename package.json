@@ -4,7 +4,7 @@
   "description": "Weighted Average Calculator",
   "main": "index.js",
   "scripts": {
-    "start": "node app"
+    "start": "node server/app.js"
   },
   "author": "",
   "license": "ISC",
