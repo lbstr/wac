@@ -7,7 +7,7 @@ var express = require('express');
 var app = express();
 
 // CONFIGURE
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // ROUTES
 app.get('/', function(req, res) {
