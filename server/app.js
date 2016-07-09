@@ -8,10 +8,12 @@ var app = express();
 
 // CONFIGURE
 app.use(express.static(path.join(__dirname, '../public')));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'pug');
 
 // ROUTES
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.render('index');
 });
 
 // LISTEN/START
