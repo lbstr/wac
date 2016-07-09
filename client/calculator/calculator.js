@@ -16,29 +16,29 @@
     function addTerm() {
       vm.terms.push({
         name: "Term " + (vm.terms.length + 1),
-        balance: 5000,
-        interest: 0.05
+        weight: 5000,
+        value: 0.05
       });
 
       calculate();
     }
 
     function calculate() {
-      var balanceTotal = 0;
+      var weightTotal = 0;
       var combinedWeightFactor = 0;
 
       vm.terms.forEach(function(term) {
-        var balance = +term.balance;
-        var interest = term.interest == null ? 0 : +term.interest;
+        var weight = +term.weight;
+        var value = term.value == null ? 0 : +term.value;
 
-        if (balance > 0) {
-          balanceTotal += balance;
-          combinedWeightFactor += (balance * interest);
+        if (weight > 0) {
+          weightTotal += weight;
+          combinedWeightFactor += (weight * value);
         }
       });
 
-      if (balanceTotal > 0) {
-        vm.answer = combinedWeightFactor / balanceTotal;
+      if (weightTotal > 0) {
+        vm.answer = combinedWeightFactor / weightTotal;
       }
       else {
         vm.answer = null;

@@ -2,8 +2,8 @@
   <ul>
     <li ng-repeat="term in calculator.terms">
       <input ng-model="term.name" ng-change="calculator.calculate()" placeholder="Enter a name" type="text" />
-      <input ng-model="term.balance" ng-change="calculator.calculate()" placeholder="Enter the balance (e.g. 5000)" type="text" />
-      <input ng-model="term.interest" ng-change="calculator.calculate()" placeholder="Enter the interest (e.g. 0.07)" type="text" />
+      <input ng-model="term.weight" ng-change="calculator.calculate()" placeholder="Enter the weight" type="text" />
+      <input ng-model="term.value" ng-change="calculator.calculate()" placeholder="Enter the value" type="text" />
     </li>
   </ul>
   <button ng-click="calculator.addTerm()">+</button>
