@@ -3,7 +3,7 @@ var del = require('del');
 var addStream = require('add-stream');
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('default', ['js']);
+gulp.task('default', ['js', 'css']);
 
 gulp.task('js', function() {
   var processTemplates = function() {
@@ -22,6 +22,13 @@ gulp.task('js', function() {
     .pipe(plugins.concat('all.min.js'))
     .pipe(plugins.uglify())
     .pipe(gulp.dest('public/js'));
+});
+
+gulp.task('css', function(){
+  return gulp.src('client/styles/**/*.scss')
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .pipe(plugins.concat('all.css'))
+    .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('clean', function(){
