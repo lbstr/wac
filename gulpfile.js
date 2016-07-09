@@ -27,10 +27,11 @@ gulp.task('js', function() {
 gulp.task('css', function(){
   return gulp.src('client/styles/**/*.scss')
     .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(plugins.concat('all.css'))
+    .pipe(plugins.concat('all.min.css'))
+    .pipe(plugins.minifyCss())
     .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('clean', function(){
-  return del(['public/js']);
+  return del(['public/js', 'public/css']);
 });
