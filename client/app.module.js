@@ -4,6 +4,7 @@
   angular.module('app', [
     'app.calculator',
     'app.layout',
-    'templates'
+    'templates',
+    'ui.router'
   ]);
 })();

@@ -15,11 +15,13 @@ gulp.task('js', function() {
 
   return gulp.src([
       'bower_components/angular/angular.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/**/*module*.js',
       'client/**/*.js',
     ])
     .pipe(addStream.obj(processTemplates()))
     .pipe(plugins.concat('all.min.js'))
+    .pipe(plugins.ngAnnotate())
     .pipe(plugins.uglify())
     .pipe(gulp.dest('public/js'));
 });
