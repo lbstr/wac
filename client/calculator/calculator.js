@@ -9,6 +9,20 @@
     var vm = this;
 
     vm.terms = [];
+
+    addInitialTerm();
+
+    function addInitialTerm() {
+      var termNumber = vm.terms.length + 1;
+
+      var defaultTerm = {
+        name: '#' + termNumber,
+        weight: 100,
+        value: 100
+      };
+
+      vm.terms.push(defaultTerm);
+    }
   }
 
   // FROM POC...

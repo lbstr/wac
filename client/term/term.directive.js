@@ -11,9 +11,14 @@
       templateUrl: 'term/term.html',
       controller: 'Term',
       controllerAs: 'term',
-      bindToController: true
+      bindToController: true,
+      link: linkFunc
     };
 
     return directive;
+
+    function linkFunc(scope, el, attr, term) {
+      
+    }
   }
 })();

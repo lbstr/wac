@@ -21,8 +21,8 @@ gulp.task('js', function() {
     ])
     .pipe(addStream.obj(processTemplates()))
     .pipe(plugins.concat('all.min.js'))
-    //.pipe(plugins.ngAnnotate())
-    //.pipe(plugins.uglify())
+    .pipe(plugins.ngAnnotate())
+    .pipe(plugins.uglify())
     .pipe(gulp.dest('public/js'));
 });
 

@@ -1,24 +1,8 @@
 <div ng-controller="Calculator as calculator">
   <div wac-settings></div>
-  <!-- <div ng-repeat="term in calculator.terms" wac-term term-id="term.id"></div>
-  <div wac-add-term></div>
+  <div ng-repeat="term in calculator.terms">
+    <div wac-term term="{{ term }}"></div>
+  </div>
+  <!-- <div wac-add-term></div>
   <div wac-solution></div> -->
 </div>
-
-
-
-
-<!-- OLD -->
-<!-- <div ng-controller="Calculator as calculator">
-  <ul>
-    <li ng-repeat="term in calculator.terms">
-      <input ng-model="term.name" ng-change="calculator.calculate()" placeholder="Enter a name" type="text" />
-      <input ng-model="term.weight" ng-change="calculator.calculate()" placeholder="Enter the weight" type="text" />
-      <input ng-model="term.value" ng-change="calculator.calculate()" placeholder="Enter the value" type="text" />
-    </li>
-  </ul>
-  <button ng-click="calculator.addTerm()">+</button>
-  <p>
-    <input type="text" disabled="disabled" ng-value="calculator.answer" />
-  </p>
-</div> -->
