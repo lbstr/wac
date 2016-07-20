@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.layout')
+    .module('app.shell')
     .controller('Shell', Shell);
 
   function Shell(){

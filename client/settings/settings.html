@@ -1,0 +1,23 @@
+<form ng-submit="settings.saveSettings()">
+  <h2>Settings</h2>
+
+  <fieldset>
+    <legend>Weight Format</legend>
+
+    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.PERCENT" /> Percent<br>
+    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.NUMBER" /> Number<br>
+    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.CURRENCY" /> Currency<br>
+    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.RATIO" /> Ratio<br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Value Format</legend>
+
+    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.PERCENT" /> Percent<br>
+    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.NUMBER" /> Number<br>
+    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.CURRENCY" /> Currency<br>
+    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.RATIO" /> Ratio<br>
+  </fieldset>
+
+  <input type="submit" value="Done" />
+</form>

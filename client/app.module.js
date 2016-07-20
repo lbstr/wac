@@ -2,8 +2,10 @@
   'use strict';
 
   angular.module('app', [
+    'app.shell',
     'app.calculator',
-    'app.layout',
+    'app.settings',
+    'app.term',
     'templates',
     'ui.router'
   ]);

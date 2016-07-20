@@ -1,0 +1,19 @@
+(function(){
+  'use strict'
+
+  angular
+    .module('app.term')
+    .directive('wacTerm', TermDirective);
+
+  function TermDirective() {
+    var directive = {
+      restrict: 'A',
+      templateUrl: 'term/term.html',
+      controller: 'Term',
+      controllerAs: 'term',
+      bindToController: true
+    };
+
+    return directive;
+  }
+})();
