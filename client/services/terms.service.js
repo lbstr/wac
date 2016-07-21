@@ -13,7 +13,8 @@
       getTerms: getTerms,
       addDefaultTerm: addDefaultTerm,
       addTerm: addTerm,
-      getTerm: getTerm
+      getTerm: getTerm,
+      deleteTerm: deleteTerm
     };
 
     return service;
@@ -53,6 +54,23 @@
       }
 
       return null;
+    }
+
+    function deleteTerm(key) {
+      if (key == null || key.length === 0) {
+        throw 'Error: invalid key supplied to TermsService.deleteTerm';
+      }
+
+      var i = terms.length;
+
+      while(i--) {
+        if (terms[i].key === key) {
+          terms.splice(i, 1);
+          return true;
+        }
+      }
+
+      return false;
     }
   }
 })();

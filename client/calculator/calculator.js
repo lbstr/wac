@@ -20,7 +20,6 @@
 
     function addTerm() {
       termsService.addDefaultTerm();
-      vm.terms = termsService.getTerms();
     }
   }
 

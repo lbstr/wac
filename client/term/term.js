@@ -13,6 +13,7 @@
     vm.weight = null;
     vm.value = null;
     vm.init = init;
+    vm.remove = remove;
 
     function init(key) {
       var term = termsService.getTerm(key);
@@ -21,9 +22,14 @@
         throw 'Error: term not found';
       }
 
+      vm.key = key;
       vm.name = term.name;
       vm.weight = term.weight;
       vm.value = term.value;
+    }
+
+    function remove() {
+      termsService.deleteTerm(vm.key);
     }
   }
 })();
