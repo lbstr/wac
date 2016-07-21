@@ -5,7 +5,8 @@
     .module('app.services')
     .factory('termsService', TermsService);
 
-  function TermsService() {
+  /* @ngInject() */
+  function TermsService($rootScope) {
     var terms = [];
     var id = 1;
 
@@ -38,6 +39,7 @@
 
     function addTerm(term) {
       terms.push(term);
+      broadcast();
     }
 
     function getTerm(key) {
@@ -66,11 +68,16 @@
       while(i--) {
         if (terms[i].key === key) {
           terms.splice(i, 1);
+          broadcast();
           return true;
         }
       }
 
       return false;
+    }
+
+    function broadcast() {
+      $rootScope.$broadcast('terms:updated', terms);
     }
   }
 })();
