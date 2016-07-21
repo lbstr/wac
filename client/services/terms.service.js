@@ -19,7 +19,6 @@
     return service;
 
     function getTerms() {
-      console.log(terms);
       return terms;
     }
 

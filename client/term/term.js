@@ -16,8 +16,7 @@
 
     function init(key) {
       var term = termsService.getTerm(key);
-console.log(key);
-console.log(typeof key);
+
       if (!term) {
         throw 'Error: term not found';
       }
