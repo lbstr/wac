@@ -3,6 +3,10 @@
   <div ng-repeat="term in calculator.terms">
     <div wac-term term-key="{{term.key}}"></div>
   </div>
-  <!-- <div wac-add-term></div>
-  <div wac-solution></div> -->
+  
+  <div>
+  <button ng-click="calculator.addTerm()">Add</button>
+  </div>
+
+  <!-- <div wac-solution></div> -->
 </div>

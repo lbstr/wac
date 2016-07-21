@@ -12,9 +12,15 @@
     initialize();
 
     vm.terms = termsService.getTerms();
+    vm.addTerm = addTerm;
 
     function initialize() {
+      addTerm();
+    }
+
+    function addTerm() {
       termsService.addDefaultTerm();
+      vm.terms = termsService.getTerms();
     }
   }
 
