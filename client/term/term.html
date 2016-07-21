@@ -1,6 +1,6 @@
 <div>
-  <input ng-model="term.name" placeholder="Enter a name" type="text" />
-  <input ng-model="term.weight" placeholder="Enter the weight" type="text" />
-  <input ng-model="term.value" placeholder="Enter the value" type="text" />
+  <input ng-model="term.name" ng-change="term.update()" placeholder="Enter a name" type="text" />
+  <input ng-model="term.weight" ng-change="term.update()" placeholder="Enter the weight" type="text" />
+  <input ng-model="term.value" ng-change="term.update()" placeholder="Enter the value" type="text" />
   <button ng-click="term.remove()">Remove</button>
 </div>

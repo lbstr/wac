@@ -15,6 +15,7 @@
       addDefaultTerm: addDefaultTerm,
       addTerm: addTerm,
       getTerm: getTerm,
+      updateTerm: updateTerm,
       deleteTerm: deleteTerm
     };
 
@@ -43,32 +44,51 @@
     }
 
     function getTerm(key) {
-      if (key == null || key.length === 0) {
-        throw 'Error: invalid key supplied to TermsService.getTerm';
-      }
+      var term = null;
 
-      var i = terms.length;
+      operate(key, function(index) {
+        term = terms[index];
+      });
 
-      while(i--) {
-        if (terms[i].key === key) {
-          return terms[i];
-        }
-      }
+      return term;
+    }
 
-      return null;
+    function updateTerm(key, term) {
+      operate(key, function(index, oldTerm) {
+        oldTerm.name = term.name;
+        oldTerm.weight = term.weight;
+        oldTerm.value = term.value;
+        broadcast();
+      });
     }
 
     function deleteTerm(key) {
+      operate(key, function(index) {
+        terms.splice(index, 1);
+        broadcast();
+      });
+    }
+
+    /*
+     * Find the term by its key, 
+     * then perform the given operation.
+     *
+     * This is a result of storing terms
+     * in an array. Consider switching to
+     * an object as we'll save ourselves
+     * from iterating the entire list on
+     * most operations. 
+     */
+    function operate(key, operation) {
       if (key == null || key.length === 0) {
-        throw 'Error: invalid key supplied to TermsService.deleteTerm';
+        throw 'Error: invalid key supplied';
       }
 
       var i = terms.length;
 
       while(i--) {
         if (terms[i].key === key) {
-          terms.splice(i, 1);
-          broadcast();
+          operation(i, terms[i], key);
           return true;
         }
       }
