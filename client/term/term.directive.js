@@ -12,13 +12,18 @@
       controller: 'Term',
       controllerAs: 'term',
       bindToController: true,
-      link: linkFunc
+      link: linkFunc,
+      scope: {
+        key: '@termKey'
+      }
     };
 
     return directive;
 
     function linkFunc(scope, el, attr, term) {
-      
+      attr.$observe('termKey', function(key) {
+        term.init(key);
+      });
     }
   }
 })();

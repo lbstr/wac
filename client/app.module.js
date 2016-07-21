@@ -6,6 +6,7 @@
     'app.calculator',
     'app.settings',
     'app.term',
+    'app.services',
     'templates',
     'ui.router'
   ]);

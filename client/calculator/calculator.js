@@ -5,28 +5,21 @@
     .module('app.calculator')
     .controller('Calculator', Calculator);
 
-  function Calculator() {
+  /* @ngInject() */
+  function Calculator(termsService) {
     var vm = this;
 
-    vm.terms = [];
+    initialize();
 
-    addInitialTerm();
+    vm.terms = termsService.getTerms();
 
-    function addInitialTerm() {
-      var termNumber = vm.terms.length + 1;
-
-      var defaultTerm = {
-        name: '#' + termNumber,
-        weight: 100,
-        value: 100
-      };
-
-      vm.terms.push(defaultTerm);
+    function initialize() {
+      termsService.addDefaultTerm();
     }
   }
 
   // FROM POC...
-  //   Some of this will come in handy
+  //   Some of this will come in handy for the solution module
   //
   //
   //

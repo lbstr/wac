@@ -5,11 +5,26 @@
     .module('app.term')
     .controller('Term', Term);
 
-  function Term() {
+  /* @ngInject() */
+  function Term(termsService) {
     var vm = this;
 
-    vm.name = 'Term';
-    vm.weight = 100;
-    vm.value = 100;
+    vm.name = null;
+    vm.weight = null;
+    vm.value = null;
+    vm.init = init;
+
+    function init(key) {
+      var term = termsService.getTerm(key);
+console.log(key);
+console.log(typeof key);
+      if (!term) {
+        throw 'Error: term not found';
+      }
+
+      vm.name = term.name;
+      vm.weight = term.weight;
+      vm.value = term.value;
+    }
   }
 })();
