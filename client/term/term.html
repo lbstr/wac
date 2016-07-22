@@ -1,9 +1,7 @@
 <fieldset>
-  <label>Name: <input ng-model="term.name" ng-change="term.update()" placeholder="Enter a name" type="text" /></label>
-  <br>
-  <label>Weight: <input ng-model="term.weight" ng-change="term.update()" placeholder="Enter the weight" type="text" /></label>
-  <br>
-  <label>Value: <input ng-model="term.value" ng-change="term.update()" placeholder="Enter the value" type="text" /></label>
-  <br>
+  <p><label>Name: <input ng-model="term.name" ng-change="term.update()" placeholder="Enter a name" type="text" /></label></p>
+  <p><label>Weight: <input ng-model="term.weight" ng-change="term.update()" placeholder="Enter the weight" type="text" /></label></p>
+  <p><label>Value: <input ng-model="term.value" ng-change="term.update()" placeholder="Enter the value" type="text" /></label></p>
+
   <button ng-click="term.remove()">Remove</button>
 </fieldset>
