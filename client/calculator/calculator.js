@@ -13,6 +13,7 @@
 
     vm.terms = termsService.getTerms();
     vm.addTerm = addTerm;
+    vm.toggleSection = toggleSection;
 
     function initialize() {
       addTerm();
@@ -20,6 +21,11 @@
 
     function addTerm() {
       termsService.addDefaultTerm();
+    }
+
+    function toggleSection(){
+      console.log("Toggle Section");
+      console.log(arguments);
     }
   }
 })();

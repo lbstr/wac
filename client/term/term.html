@@ -1,7 +1,18 @@
-<fieldset>
-  <p><label>Name: <input ng-model="term.name" ng-change="term.update()" placeholder="Enter a name" type="text" /></label></p>
-  <p><label>Weight: <input ng-model="term.weight" ng-change="term.update()" placeholder="Enter the weight" type="text" /></label></p>
-  <p><label>Value: <input ng-model="term.value" ng-change="term.update()" placeholder="Enter the value" type="text" /></label></p>
+<div class="calc-section">
 
-  <button ng-click="term.remove()">Remove</button>
-</fieldset>
+  <div class="calc-section__header" ng-click="calculator.toggleSection()">
+    <h2>{{ term.name }}</h2>
+  </div>
+
+  <div class="calc-section__body">
+
+    <div class="calc-term">
+      <p><label>Weight: <input ng-model="term.weight" ng-change="term.update()" placeholder="Enter the weight" type="text" /></label></p>
+      <p><label>Value: <input ng-model="term.value" ng-change="term.update()" placeholder="Enter the value" type="text" /></label></p>
+
+      <button ng-click="term.remove()">Remove</button>
+    </div>
+
+  </div>
+
+</div>

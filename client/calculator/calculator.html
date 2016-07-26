@@ -1,12 +1,19 @@
 <div ng-controller="Calculator as calculator">
-  <!-- <div wac-settings></div> -->
+  <div wac-settings></div>
   <div ng-repeat="term in calculator.terms">
     <div wac-term term-key="{{term.key}}"></div>
   </div>
   
-  <p>
-    <button ng-click="calculator.addTerm()">Add</button>
-  </p>
+  <div class="calc-section">
+    <div class="calc-section__header" ng-click="calculator.toggleSection()">
+      <h2>Add</h2>
+    </div>
+    <div class="calc-section__body">
+      <p>
+        <button ng-click="calculator.addTerm()">Add</button>
+      </p>
+    </div>
+  </div>
 
   <div wac-solution></div>
 </div>

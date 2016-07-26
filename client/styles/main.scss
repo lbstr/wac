@@ -1,4 +1,6 @@
 $font-family: Helvetica, sans-serif;
+$border-color-primary: #eee;
+$calc-section-body-bg-color: #ddd;
 
 
 
@@ -7,10 +9,55 @@ html, body {
   margin: 0;
 }
 
-h1 {
-  font-size: 1.5em;
+.page__header {
+  padding: 0 1em;
+}
+
+.page__header h1 {
+  font-size: 1.8em;
   padding: .8em 0;
   margin: 0;
-  text-align: center;
 }
+
+.page__footer {
+  border-top: 1px solid $border-color-primary;
+  padding: .5em 1em;
+}
+
+.page__copyright {
+  font-size: .5em;
+  padding: 0;
+  margin: 0;
+}
+
+.calc-section__header {
+  border-top: 1px solid $border-color-primary;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.calc-section__header h2 {
+  margin: 0;
+  padding: 1em 0;
+  font-size: 1.4em;
+}
+
+.calc-section__header--open {
+  border-bottom: 1px solid $border-color-primary;
+}
+
+.calc-section__body {
+  display: none;
+  padding: 0 1em;
+  background-color: $calc-section-body-bg-color;
+}
+
+.calc-section__body--open {
+  display: block;
+}
+
+
+
+
+
 

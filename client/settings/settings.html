@@ -1,23 +1,34 @@
-<form ng-submit="settings.saveSettings()">
-  <h2>Settings</h2>
+<div class="calc-section">
 
-  <fieldset>
-    <legend>Weight Format</legend>
+  <div class="calc-section__header">
+    <h2>Settings</h2>
+  </div>
 
-    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.PERCENT" /> Percent<br>
-    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.NUMBER" /> Number<br>
-    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.CURRENCY" /> Currency<br>
-    <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.RATIO" /> Ratio<br>
-  </fieldset>
+  <div class="calc-section__body">
 
-  <fieldset>
-    <legend>Value Format</legend>
+    <form ng-submit="settings.saveSettings()">
 
-    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.PERCENT" /> Percent<br>
-    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.NUMBER" /> Number<br>
-    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.CURRENCY" /> Currency<br>
-    <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.RATIO" /> Ratio<br>
-  </fieldset>
+      <fieldset>
+        <legend>Weight Format</legend>
 
-  <input type="submit" value="Done" />
-</form>
+        <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.PERCENT" /> Percent<br>
+        <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.NUMBER" /> Number<br>
+        <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.CURRENCY" /> Currency<br>
+        <input type="radio" name="weightFormat" ng-model="settings.weightFormat" ng-value="settings.formats.RATIO" /> Ratio<br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Value Format</legend>
+
+        <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.PERCENT" /> Percent<br>
+        <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.NUMBER" /> Number<br>
+        <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.CURRENCY" /> Currency<br>
+        <input type="radio" name="valueFormat" ng-model="settings.valueFormat" ng-value="settings.formats.RATIO" /> Ratio<br>
+      </fieldset>
+
+      <input type="submit" value="Done" />
+    </form>
+
+  </div>
+
+</div>
