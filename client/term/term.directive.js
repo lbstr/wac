@@ -18,8 +18,8 @@
     return directive;
 
     function linkFunc(scope, el, attr, term) {
-      attr.$observe('termKey', function(key) {
-        term.init(key);
+      scope.$watch(attr.wacTerm, function(calcTerm) {
+        term.init(calcTerm.key);
       });
     }
   }

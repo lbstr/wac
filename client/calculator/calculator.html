@@ -1,8 +1,6 @@
 <div ng-controller="Calculator as calculator">
   <div wac-settings></div>
-  <div ng-repeat="calcTerm in calculator.terms">
-    <div wac-term term-key="{{calcTerm.key}}"></div>
-  </div>
+  <div ng-repeat="calcTerm in calculator.terms" wac-term="calcTerm"></div>
   
   <div class="calc-section">
     <div class="calc-section__header" ng-click="calculator.toggleSection()">
