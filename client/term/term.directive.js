@@ -12,10 +12,7 @@
       controller: 'Term',
       controllerAs: 'term',
       bindToController: true,
-      link: linkFunc,
-      scope: {
-        key: '@termKey'
-      }
+      link: linkFunc
     };
 
     return directive;
