@@ -23,9 +23,10 @@
       termsService.addDefaultTerm();
     }
 
-    function toggleSection(){
+    function toggleSection(asdf){
       console.log("Toggle Section");
-      console.log(arguments);
+      console.log(asdf);
     }
   }
+
 })();

@@ -1,9 +1,9 @@
 <div ng-controller="Calculator as calculator">
-  <div wac-settings></div>
+  <div wac-section="settings"></div>
   <div ng-repeat="calcTerm in calculator.terms" wac-term="calcTerm"></div>
   
   <div class="calc-section">
-    <div class="calc-section__header" ng-click="calculator.toggleSection()">
+    <div class="calc-section__header" ng-click="calculator.toggleSection($event)">
       <h2>Add</h2>
     </div>
     <div class="calc-section__body">

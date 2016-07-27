@@ -23,4 +23,29 @@
       });
     }
   }
+
+
+
+
+
+
+  // angular
+  //   .module('app.calculator')
+  //   .directive('wacToggle', Toggle);
+
+  // function Toggle(){
+  //   var directive = {
+  //     restrict: 'A',
+  //     link: linkFunc
+  //   };
+
+  //   return directive;
+
+  //   function linkFunc(scope, el, attr) {
+  //     console.log(scope);
+  //     console.log(el);
+  //     console.log(attr);
+  //     console.log($(el));
+  //   }
+  // }
 })();

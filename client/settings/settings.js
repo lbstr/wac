@@ -6,7 +6,7 @@
     .controller('Settings', Settings);
 
   /* @ngInject */
-  function Settings(settingsService, $interval) {
+  function Settings(settingsService) {
     var vm = this;
 
     var defaultSettings = settingsService.getSettings();
