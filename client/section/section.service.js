@@ -8,7 +8,7 @@
   /* @ngInject() */
   function SectionService(termsService, $rootScope) {
     var settingsSection = new SectionModel("settings", "Settings", "settings/settings.html");
-    var adderSection = new SectionModel("adder", "Add", "adder/adder.html");
+    var adderSection = new SectionModel("adder", "Add", "adder/adder.html", false);
     var solutionSection = new SectionModel("solution", "Solution", "solution/solution.html");
 
     var activeSections = [];
@@ -23,8 +23,18 @@
 
     function initialize() {
       termsService.addDefaultTerm();
+      subscribeToSectionToggle();
       subscribeToTermsUpdate();
       setActiveSections();
+    }
+
+    function subscribeToSectionToggle() {
+      $rootScope.$on('section:toggle', function(event, sectionId) {
+        if (sectionId === 'adder') {
+          termsService.addDefaultTerm();
+          setActiveSections();
+        }
+      });
     }
 
     function subscribeToTermsUpdate() {
@@ -52,16 +62,20 @@
         ("term-" + term.key),
         term.name,
         "term/term.html",
+        true,
+        true,
         term);
 
       activeSections.push(termSection);
     }
   }
 
-  function SectionModel(sectionId, heading, bodyTemplateUrl, data) {
+  function SectionModel(sectionId, heading, bodyTemplateUrl, expandable, isExpanded, data) {
     this.sectionId = sectionId;
     this.heading = heading;
     this.bodyTemplateUrl = bodyTemplateUrl;
+    this.expandable = expandable === undefined ? true : expandable;
+    this.isExpanded = isExpanded === undefined ? false : isExpanded;
     this.data = data || {};
   }
 

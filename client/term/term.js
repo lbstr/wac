@@ -25,7 +25,6 @@
     }
 
     function remove() {
-      console.log('remove!!!');
       termsService.deleteTerm(termModel.key);
     }
   }

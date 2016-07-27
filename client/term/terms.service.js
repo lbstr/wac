@@ -63,9 +63,7 @@
     }
 
     function deleteTerm(key) {
-      console.log(key);
       operate(key, function(index) {
-        console.log('found it at %d', index);
         terms.splice(index, 1);
         broadcast('delete');
       });
