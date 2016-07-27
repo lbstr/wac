@@ -6,31 +6,18 @@
     .controller('Term', Term);
 
   /* @ngInject() */
-  function Term(termsService) {
+  function Term($scope, termsService) {
     var vm = this;
+    var termModel = $scope.sectionModel.data;
 
-    vm.name = null;
-    vm.weight = null;
-    vm.value = null;
-    vm.init = init;
+    vm.name = termModel.name;
+    vm.weight = termModel.weight;
+    vm.value = termModel.value;
     vm.update = update;
     vm.remove = remove;
 
-    function init(key) {
-      var term = termsService.getTerm(key);
-
-      if (!term) {
-        throw 'Error: term not found';
-      }
-
-      vm.key = key;
-      vm.name = term.name;
-      vm.weight = term.weight;
-      vm.value = term.value;
-    }
-
     function update() {
-      termsService.updateTerm(vm.key, {
+      termsService.updateTerm(termModel.key, {
         name: vm.name,
         weight: vm.weight,
         value: vm.value
@@ -38,7 +25,8 @@
     }
 
     function remove() {
-      termsService.deleteTerm(vm.key);
+      console.log('remove!!!');
+      termsService.deleteTerm(termModel.key);
     }
   }
 })();

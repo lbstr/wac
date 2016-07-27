@@ -40,7 +40,7 @@
 
     function addTerm(term) {
       terms.push(term);
-      broadcast();
+      broadcast('add');
     }
 
     function getTerm(key) {
@@ -58,14 +58,16 @@
         oldTerm.name = term.name;
         oldTerm.weight = term.weight;
         oldTerm.value = term.value;
-        broadcast();
+        broadcast('update');
       });
     }
 
     function deleteTerm(key) {
+      console.log(key);
       operate(key, function(index) {
+        console.log('found it at %d', index);
         terms.splice(index, 1);
-        broadcast();
+        broadcast('delete');
       });
     }
 
@@ -96,8 +98,8 @@
       return false;
     }
 
-    function broadcast() {
-      $rootScope.$broadcast('terms:updated', terms);
+    function broadcast(eventType) {
+      $rootScope.$broadcast('terms:' + eventType, terms);
     }
   }
 })();

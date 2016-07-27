@@ -5,8 +5,7 @@
     .module('app.section')
     .controller('Section', Section);
 
-  /* @ngInject() */
-  function Section(sectionService) {
+  function Section() {
     var vm = this;
 
     vm.heading = 'Loading...';

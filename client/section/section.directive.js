@@ -12,16 +12,16 @@
       templateUrl: 'section/section.html',
       controller: 'Section',
       controllerAs: 'section',
-      bindToController: true,
-      link: link
+      link: link,
+      scope: {
+        sectionModel: '=wacSection'
+      }
     };
 
     return directive;
 
     function link(scope, el, attr, section) {
-      scope.$watch(attr.wacSection, function(sectionModel) {
-        section.init(sectionModel);
-      });
+      section.init(scope.sectionModel);
     }
   }
 })();

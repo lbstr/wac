@@ -6,32 +6,24 @@
     .controller('Calculator', Calculator);
 
   /* @ngInject() */
-  function Calculator(termsService, sectionService) {
+  function Calculator(sectionService, $scope) {
     var vm = this;
+
+    vm.activeSections = [];
 
     initialize();
 
-    vm.activeSections = sectionService.getActiveSections();
-
-
-
-
-
-    vm.terms = termsService.getTerms();
-    vm.addTerm = addTerm;
-    vm.toggleSection = toggleSection;
-
     function initialize() {
-      addTerm();
+      subscribeToSectionsUpdate();
+      setActiveSections();
     }
 
-    function addTerm() {
-      termsService.addDefaultTerm();
+    function subscribeToSectionsUpdate() {
+      $scope.$on('sections:updated', setActiveSections);
     }
 
-    function toggleSection(asdf){
-      console.log("Toggle Section");
-      console.log(asdf);
+    function setActiveSections() {
+      vm.activeSections = sectionService.getActiveSections();
     }
   }
 

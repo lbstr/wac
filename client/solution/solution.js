@@ -9,21 +9,26 @@
   function Solution(termsService, $scope) {
     var vm = this;
 
+    vm.answer = null;
+
     initialize();
 
-    vm.answer = calculateAnswer();
-
     function initialize() {
-      subscribeToTermsUpdate();
+      subscribeToTermsChange();
+      updateAnswer();
     }
 
-    function subscribeToTermsUpdate() {
-      $scope.$on('terms:updated', function(event) {
-        vm.answer = calculateAnswer();
-      });
+    function subscribeToTermsChange() {
+      $scope.$on('terms:update', updateAnswer);
+      $scope.$on('terms:delete', updateAnswer);
+      $scope.$on('terms:add', updateAnswer);
     }
 
-    function calculateAnswer() {
+    function updateAnswer() {
+      vm.answer = getAnswer();
+    }
+
+    function getAnswer() {
       var terms = termsService.getTerms();
       var weightTotal = 0;
       var combinedWeightFactor = 0;
