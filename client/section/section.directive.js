@@ -13,7 +13,8 @@
       controller: 'Section',
       controllerAs: 'section',
       bindToController: true,
-      link: link
+      link: link,
+      scope: {}
     };
 
     return directive;

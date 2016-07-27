@@ -19,6 +19,14 @@
         settings: {
           heading: 'Settings',
           templateUrl: 'settings/settings.html'
+        },
+        solution: {
+          heading: 'Solution',
+          templateUrl: 'solution/solution.html'
+        },
+        adder: {
+          heading: 'Add',
+          templateUrl: 'adder/adder.html'
         }
       };
 

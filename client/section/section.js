@@ -9,8 +9,8 @@
   function Section(sectionService) {
     var vm = this;
 
-    vm.heading = 'Fake Section Heading';
-    vm.templateUrl = 'foo/bar.html';
+    vm.heading = 'Loading...';
+    vm.templateUrl = '';
     vm.isOpen = false;
     vm.init = init;
     vm.toggle = toggle;

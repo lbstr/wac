@@ -6,6 +6,7 @@
     'app.calculator',
     'app.settings',
     'app.term',
+    'app.adder',
     'app.solution',
     'app.section',
     'app.services',

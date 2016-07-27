@@ -18,18 +18,6 @@
       .state('calc', {
         url: '/',
         templateUrl: 'calculator/calculator.html'
-      })
-      .state('calc.settings', {
-        templateUrl: 'settings/settings.html'
-      })
-      .state('calc.term', {
-        templateUrl: 'term/term.html'
-      })
-      .state('calc.add-term', {
-        templateUrl: 'add-term/add-term.html'
-      })
-      .state('calc.solution', {
-        templateUrl: 'solution/solution.html'
       });
   };
 })();
