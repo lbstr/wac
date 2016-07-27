@@ -15,19 +15,9 @@
     vm.init = init;
     vm.toggle = toggle;
 
-    function init(sectionId) {
-      if (!sectionId || sectionId.length === 0) {
-        throw 'Empty section ID';
-      }
-
-      var sectionModel = sectionService.get(sectionId);
-
-      if (!sectionModel) {
-        throw 'Invalid section ID';
-      }
-
+    function init(sectionModel) {
       vm.heading = sectionModel.heading;
-      vm.templateUrl = sectionModel.templateUrl;
+      vm.templateUrl = sectionModel.bodyTemplateUrl;
     }
 
     function toggle() {

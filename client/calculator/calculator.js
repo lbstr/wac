@@ -6,10 +6,16 @@
     .controller('Calculator', Calculator);
 
   /* @ngInject() */
-  function Calculator(termsService) {
+  function Calculator(termsService, sectionService) {
     var vm = this;
 
     initialize();
+
+    vm.activeSections = sectionService.getActiveSections();
+
+
+
+
 
     vm.terms = termsService.getTerms();
     vm.addTerm = addTerm;

@@ -13,14 +13,15 @@
       controller: 'Section',
       controllerAs: 'section',
       bindToController: true,
-      link: link,
-      scope: {}
+      link: link
     };
 
     return directive;
 
     function link(scope, el, attr, section) {
-      section.init(attr.wacSection);
+      scope.$watch(attr.wacSection, function(sectionModel) {
+        section.init(sectionModel);
+      });
     }
   }
 })();
