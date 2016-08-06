@@ -1,3 +1,5 @@
 <div ng-controller="Calculator as calculator">
-  <div ng-repeat="sectionModel in calculator.activeSections" wac-section="sectionModel"></div>
+  <div ng-repeat="calcTerm in calculator.terms" wac-term="calcTerm"></div>
+  <button ng-click="calculator.addTerm()">+</button>
+  <!-- <div wac-solution></div> -->
 </div>

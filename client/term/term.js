@@ -8,24 +8,37 @@
   /* @ngInject() */
   function Term($scope, termsService) {
     var vm = this;
-    var termModel = $scope.sectionModel.data;
+    var model = null;
 
-    vm.name = termModel.name;
-    vm.weight = termModel.weight;
-    vm.value = termModel.value;
+    vm.weight = null;
+    vm.value = null;
+    vm.init = init;
     vm.update = update;
     vm.remove = remove;
 
+    function init(termModel) {
+      model = termModel;
+      vm.weight = model.weight;
+      vm.value = model.value;
+    }
+
     function update() {
-      termsService.updateTerm(termModel.key, {
-        name: vm.name,
+      if (!model) {
+        return;
+      }
+
+      termsService.updateTerm(model.key, {
         weight: vm.weight,
         value: vm.value
       });
     }
 
     function remove() {
-      termsService.deleteTerm(termModel.key);
+      if (!model) {
+        return;
+      }
+
+      termsService.deleteTerm(model.key);
     }
   }
 })();
