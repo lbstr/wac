@@ -1,6 +1,6 @@
 <div ng-controller="Calculator as calculator" class="workspace">
   <div ng-repeat-start="calcTerm in calculator.terms" wac-term="calcTerm"></div>
   <div class="calc-term-seperator" ng-repeat-end ng-if="$index < calculator.terms.length - 1">Plus</div>
-  <button class="button" ng-click="calculator.addTerm()">&#43;</button>
+  <button class="add-term" ng-click="calculator.addTerm()">&#43;</button>
   <div wac-solution></div>
 </div>
