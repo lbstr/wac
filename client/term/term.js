@@ -10,6 +10,7 @@
     var vm = this;
     var model = null;
 
+    vm.key = null;
     vm.weight = null;
     vm.value = null;
     vm.init = init;
@@ -18,6 +19,8 @@
 
     function init(termModel) {
       model = termModel;
+
+      vm.key = model.key;
       vm.weight = model.weight;
       vm.value = model.value;
     }

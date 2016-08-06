@@ -1,6 +1,12 @@
 <div class="calc-term">
-  <p><label>Weight: <input ng-model="term.weight" ng-change="term.update()" placeholder="Enter the weight" type="text" /></label></p>
-  <p><label>Value: <input ng-model="term.value" ng-change="term.update()" placeholder="Enter the value" type="text" /></label></p>
+  <div class="calc-term__input calc-term__input--first">
+    <label class="calc-term__input-label" for="weight-input-{{term.key}}">Weight</label>
+    <input class="calc-term__input-box" id="weight-input-{{term.key}}" ng-model="term.weight" ng-change="term.update()" placeholder="e.g. 50" type="number" autocomplete="off" />
+  </div>
+  <div class="calc-term__input">
+    <label class="calc-term__input-label" for="value-input-{{term.key}}">Value</label>
+    <input class="calc-term__input-box" id="value-input-{{term.key}}" ng-model="term.value" ng-change="term.update()" placeholder="e.g. 100" type="number" autocomplete="off" />
+  </div>
 
   <button ng-click="term.remove()">Remove</button>
 </div>

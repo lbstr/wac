@@ -8,6 +8,7 @@
   function TermDirective() {
     var directive = {
       restrict: 'A',
+      replace: true,
       templateUrl: 'term/term.html',
       controller: 'Term',
       controllerAs: 'term',

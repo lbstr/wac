@@ -1,6 +1,7 @@
 $font-family: Helvetica, sans-serif;
 $border-color-primary: #eee;
-$calc-section-body-bg-color: #ddd;
+$workspace-background-color: #eee;
+$form-padding-right: 12px;
 
 
 
@@ -30,31 +31,50 @@ html, body {
   margin: 0;
 }
 
-.calc-section__header {
-  border-top: 1px solid $border-color-primary;
-  padding: 0 1em;
-  cursor: pointer;
+.workspace {
+  background-color: $workspace-background-color;
+  padding: 1em;
 }
 
-.calc-section__header h2 {
-  margin: 0;
-  padding: 1em 0;
+.calc-term {
+  background-color: white;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.calc-term__input {
+  float: left;
+  margin: 0 0 1em;
+  width: 50%;
+  text-align: right;
+}
+
+.calc-term__input-label {
+  margin-right: $form-padding-right;
+  font-size: 0.8em;
+}
+
+.calc-term__input-box {
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 100%;
   font-size: 1.4em;
+  padding: 0.5em $form-padding-right;
+  text-align: right;
+  margin-top: 0.2em;
+
+  .calc-term__input--first & {
+    border-right-color: white;
+  }
 }
 
-.calc-section__header--open {
-  border-bottom: 1px solid $border-color-primary;
-}
 
-.calc-section__body {
-  display: none;
-  padding: 0 1em;
-  background-color: $calc-section-body-bg-color;
-}
 
-.calc-section__body--open {
-  display: block;
-}
+
+
+
+
+
 
 
 
