@@ -5,7 +5,11 @@ var runSequence = require('run-sequence');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('default', function(){
-  return runSequence('clean', ['js', 'css'], 'watch');
+  return runSequence('build', 'watch');
+});
+
+gulp.task('build', function(){
+  return runSequence('clean', ['js', 'css']);
 });
 
 gulp.task('watch', function(){
