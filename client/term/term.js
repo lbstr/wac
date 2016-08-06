@@ -30,6 +30,13 @@
         return;
       }
 
+      if (vm.weight == null || vm.value == null) {
+        // error
+      }
+      else {
+        // good
+      }
+
       termsService.updateTerm(model.key, {
         weight: vm.weight,
         value: vm.value
