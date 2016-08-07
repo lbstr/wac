@@ -25,7 +25,8 @@
     }
 
     function updateAnswer() {
-      vm.answer = getAnswer();
+      var rawAnswer = getAnswer();
+      vm.answer = formatAnswer(rawAnswer);
     }
 
     function getAnswer() {
@@ -48,6 +49,43 @@
       }
 
       return null;
+    }
+
+    function formatAnswer(answer) {
+      if (answer == null) {
+        return null;
+      }
+
+      var numDecimals = getNumDecimals(answer);
+      var scale = Math.pow(10, numDecimals);
+      var roundedAnswer = Math[answer < 0 ? 'ceil' : 'floor'](answer * scale) / scale;
+
+      var formattedAnswer = roundedAnswer + '';
+      if (roundedAnswer != answer) {
+        formattedAnswer += '...';
+      }
+
+      return formattedAnswer;
+    }
+
+    function getNumDecimals(answer) {
+      if (answer % 1 === 0) {
+        return 0;
+      }
+
+      const MIN_NUMBER_OF_DECIMALS = 2;
+      const MAX_NUMBER_OF_DECIMALS = 4;
+      const MAX_NUMBER_OF_DIGITS = 7;
+
+      var numberOfWholeNumbers = 1 + Math.floor(Math.log(Math.abs(answer)) / Math.log(10));
+
+      var numberOfDecimals = Math.max(
+          MIN_NUMBER_OF_DECIMALS, 
+          Math.min(
+            MAX_NUMBER_OF_DECIMALS, 
+            MAX_NUMBER_OF_DIGITS - numberOfWholeNumbers));
+
+      return numberOfDecimals;
     }
   }
 })();
