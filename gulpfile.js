@@ -9,7 +9,7 @@ gulp.task('default', function(){
 });
 
 gulp.task('build', function(){
-  return runSequence('clean', ['js', 'css']);
+  return runSequence('clean', ['js', 'css', 'img']);
 });
 
 gulp.task('watch', function(){
@@ -21,6 +21,11 @@ gulp.task('watch', function(){
   gulp.watch('client/**/*.scss', function(e){
     console.log("File %s was %s; running css tasks...", e.path, e.type);
     return runSequence('clean-css', 'css');
+  });
+
+  gulp.watch('client/img/**/*', function(e){
+    console.log("File %s was %s; running img tasks...", e.path, e.type);
+    return runSequence('clean-img', 'img');
   });
 
   console.log('Watching...');
@@ -55,7 +60,12 @@ gulp.task('css', function(){
     .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('clean', ['clean-js', 'clean-css']);
+gulp.task('img', function() {
+  return gulp.src('client/img/**/*')
+    .pipe(gulp.dest('public/img'))
+});
+
+gulp.task('clean', ['clean-js', 'clean-css', 'clean-img']);
 
 gulp.task('clean-js', function(){
   return del(['public/js']);
@@ -63,4 +73,8 @@ gulp.task('clean-js', function(){
 
 gulp.task('clean-css', function(){
   return del(['public/css']);
+});
+
+gulp.task('clean-img', function(){
+  return del(['public/img']);
 });

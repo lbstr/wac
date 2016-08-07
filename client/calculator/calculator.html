@@ -1,5 +1,7 @@
 <div ng-controller="Calculator as calculator" class="workspace">
   <div ng-repeat="calcTerm in calculator.terms" wac-term="calcTerm"></div>
-  <button class="add-term" ng-click="calculator.addTerm()">&#43;</button>
+  <button class="add-term" ng-click="calculator.addTerm()">
+    <img class="add-term__icon" src="img/plus.svg" alt="Add term" />
+  </button>
   <div wac-solution></div>
 </div>
