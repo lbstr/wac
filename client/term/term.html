@@ -1,5 +1,27 @@
 <div class="calc-term">
-  <button class="calc-term__delete" ng-click="term.remove()">X</button>
+  <div class="calc-term__field calc-term__field--tools">
+    <div class="calc-term__label">&nbsp;</div>
+    <div class="calc-term__input">
+      <button class="calc-term__delete" ng-click="term.remove()">X</button>
+    </div>
+  </div>
+  <div class="calc-term__field calc-term__field--input">
+    <div class="calc-term__label">
+      <label class="calc-term__input-label" for="weight-input-{{term.key}}">Weight</label>
+    </div>
+    <div class="calc-term__input">
+      <input class="calc-term__input-box" id="weight-input-{{term.key}}" ng-model="term.weight" ng-change="term.update()" placeholder="e.g. 50" type="number" autocomplete="off" />
+    </div>
+  </div>
+  <div class="calc-term__field calc-term__field--input">
+    <div class="calc-term__label">
+      <label class="calc-term__input-label" for="value-input-{{term.key}}">Value</label>
+    </div>
+    <div class="calc-term__input calc-term__input--last">
+      <input class="calc-term__input-box" id="value-input-{{term.key}}" ng-model="term.value" ng-change="term.update()" placeholder="e.g. 100" type="number" autocomplete="off" />
+    </div>
+  </div>
+ <!--  <button class="calc-term__delete" ng-click="term.remove()">X</button>
   <div class="calc-term__input calc-term__input--first">
     <label class="calc-term__input-label" for="weight-input-{{term.key}}">Weight</label>
     <input class="calc-term__input-box" id="weight-input-{{term.key}}" ng-model="term.weight" ng-change="term.update()" placeholder="e.g. 50" type="number" autocomplete="off" />
@@ -7,5 +29,5 @@
   <div class="calc-term__input">
     <label class="calc-term__input-label" for="value-input-{{term.key}}">Value</label>
     <input class="calc-term__input-box" id="value-input-{{term.key}}" ng-model="term.value" ng-change="term.update()" placeholder="e.g. 100" type="number" autocomplete="off" />
-  </div>
+  </div> -->
 </div>
